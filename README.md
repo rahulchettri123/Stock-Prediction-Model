@@ -1,15 +1,43 @@
+# 📈 Stock Prediction Model: CNN-LSTM, XGBoost & ARIMA
 
-Model Training
-•	The LSTM model is trained on scaled stock price data.
-•	The training process involves multiple epochs and batch sizes to optimize performance.
-•	The model performance is evaluated using various metrics:
-o	Root Mean Square Error (RMSE)
-o	Mean Squared Error (MSE)
-o	R-squared (R²)
-o	Mean Absolute Error (MAE)	
+## **🔍 Project Overview**
+This project is a **stock market prediction system** that leverages **deep learning (CNN-LSTM)** and **machine learning (XGBoost, ARIMA)** to forecast stock prices based on **historical market data**.
 
+📌 **Key Features:**
+- Loads **real-time stock data** from **Yahoo Finance (`yfinance`)**
+- Uses a **CNN+LSTM hybrid model** for time series forecasting
+- Benchmarks performance against **XGBoost & ARIMA**
+- Applies **SHAP explainability** to interpret model predictions
+- Optimized for **speed and accuracy** with hyperparameter tuning (Optuna)
 
+🔗 **GitHub Repository:**  
+[Stock Prediction Model](https://github.com/rahulchettri123/Stock-Prediction-Model)
 
-•	•  Epochs 30–80: Noticeable improvement in RMSE and R^2, but some fluctuations.
-•	•  Batch 32 vs. 64: Smaller batches tend to slightly reduce error, as seen in the 80-epoch results.
-•	•  100 Epochs: Shows best performance with RMSE = 95.1, MSE = 9044.6, and R2=0.9783.
+---
+
+## **📊 Dataset Details**
+The model fetches real-time stock market data from **Yahoo Finance** using `yfinance`.
+
+**✅ Dataset Source:**  
+[Yahoo Finance](https://finance.yahoo.com/)
+
+**✅ Features Used:**
+- **Close Price** (Target Variable) 📉
+- Open, High, Low Prices  
+- Trading Volume 📊
+
+**✅ Time Range:**  
+- **Start:** January 1, 2010  
+- **End:** January 1, 2025  
+
+📌 **The dataset is dynamically fetched** in real-time, so no static dataset is required.
+
+---
+
+## **⚙️ Installation & Setup**
+Follow these steps to **clone the repository** and **run the stock prediction model**.
+
+### **1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/rahulchettri123/Stock-Prediction-Model.git
+cd Stock-Prediction-Model
