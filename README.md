@@ -1,12 +1,12 @@
 # 📈 Stock Prediction Model: CNN-LSTM, XGBoost & ARIMA
 
 ## **🔍 Project Overview**
-This project is a **stock market prediction system** that leverages **deep learning (CNN-LSTM)** and **machine learning (XGBoost, ARIMA)** to forecast stock prices based on **historical market data**.
+This project is a **stock market prediction system** that leverages **deep learning (CNN-LSTM, LSTM-XGBoost Hybrid)** and **machine learning (XGBoost, ARIMA)** to forecast stock prices based on **historical market data**.
 
 📌 **Key Features:**
 - Loads **real-time stock data** from **Yahoo Finance (`yfinance`)**
 - Uses a **CNN+LSTM hybrid model** for time series forecasting
-- Benchmarks performance against **XGBoost & ARIMA**
+- Implements a **LSTM + XGBoost hybrid model** for improved interpretability
 - Applies **SHAP explainability** to interpret model predictions
 - Optimized for **speed and accuracy** with hyperparameter tuning (Optuna)
 
