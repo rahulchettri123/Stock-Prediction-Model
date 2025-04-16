@@ -10,7 +10,7 @@ A comprehensive collection of machine learning models for stock price prediction
 - Captures temporal dependencies in stock price data
 - Features comprehensive parameter tuning and optimization
 
-### 2. Hybrid LSTM+XGBoost Model (`hybrid_stock_app.py`)
+### 2. Hybrid LSTM+XGBoost Model (`hybrid_stock_app.py`) Which is our final model for this project 
 - Combines the power of LSTM and XGBoost
 - LSTM component captures temporal patterns
 - XGBoost component evaluates technical indicators
