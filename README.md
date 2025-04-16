@@ -64,7 +64,7 @@ The LSTM application features:
 - Moving average options (20, 50, 100, 200-day)
 - Rolling window validation to test model stability
 
-### Hybrid LSTM+XGBoost Model
+### Hybrid LSTM+XGBoost Model (Final model) 
 ```
 streamlit run hybrid_stock_app.py
 ```
