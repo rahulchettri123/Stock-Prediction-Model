@@ -1,18 +1,35 @@
-# LSTM Stock Price Prediction
+# Stock Price Prediction Models
 
-A sophisticated stock price prediction application that uses Long Short-Term Memory (LSTM) neural networks to forecast future stock prices based on historical data.
+A comprehensive collection of machine learning models for stock price prediction, including LSTM, Hybrid LSTM+XGBoost, and CNN approaches.
+
+## Available Models
+
+### 1. LSTM Model (`lstm_app.py`)
+- Pure Long Short-Term Memory neural network model
+- Specialized for time-series prediction 
+- Captures temporal dependencies in stock price data
+- Features comprehensive parameter tuning and optimization
+
+### 2. Hybrid LSTM+XGBoost Model (`hybrid_stock_app.py`)
+- Combines the power of LSTM and XGBoost
+- LSTM component captures temporal patterns
+- XGBoost component evaluates technical indicators
+- Features weighting mechanism between LSTM and XGBoost predictions
+
+### 3. CNN Model (`CNN_model.py`)
+- Convolutional Neural Network approach
+- Treats time-series data as patterns for convolutional analysis
+- Useful for detecting local and global patterns in price movements
 
 ## Features
 
-- **Advanced LSTM Model**: Multi-layer LSTM architecture with regularization, dropout, and batch normalization
-- **Interactive User Interface**: Built with Streamlit for easy parameter selection and visualization
-- **Comprehensive Model Optimization**: Automatic parameter tuning for time windows, layer sizes, dropout rates, and more
-- **Multiple Data Transformations**: Options for raw prices, logarithmic transformation, or percent changes
-- **Technical Indicators**: Moving averages (20, 50, 100, 200-day) for enhanced predictions
-- **Market Cycle Visualization**: Identification of bull and bear markets for long-term analysis
-- **Detailed Performance Metrics**: MAE, RMSE, MAPE, R² Score, and Directional Accuracy
-- **Rolling Window Validation**: Tests model stability across different time periods
-- **Next-Day Predictions**: Forecasts future prices with confidence intervals
+- **Interactive User Interfaces**: All models use Streamlit for intuitive interaction
+- **Technical Analysis**: Comprehensive technical indicators (RSI, MACD, Bollinger Bands, etc.)
+- **Parameter Customization**: Adjust all model hyperparameters through the UI
+- **Data Transformations**: Options for raw prices, logarithmic transformation, or percent changes
+- **Performance Metrics**: MAE, RMSE, R² Score, and Directional Accuracy
+- **Visualization**: Interactive charts for predictions and model performance
+- **Next-Day Predictions**: All models provide forecasts for future prices with confidence metrics
 
 ## Installation
 
@@ -23,8 +40,8 @@ A sophisticated stock price prediction application that uses Long Short-Term Mem
 ### Setup
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/lstm-stock-prediction.git
-   cd lstm-stock-prediction
+   git clone https://github.com/yourusername/stock-prediction-models.git
+   cd stock-prediction-models
    ```
 
 2. Install the required packages:
@@ -32,60 +49,76 @@ A sophisticated stock price prediction application that uses Long Short-Term Mem
    pip install -r requirements.txt
    ```
 
-## Usage
+## Running the Applications
 
-Run the Streamlit application:
+### LSTM Model
 ```
 streamlit run lstm_app.py
 ```
 
-This will start the application and open it in your default web browser. From there, you can:
+The LSTM application features:
+- Parameter tuning with multiple configurations
+- Market cycle visualization for long-term analysis 
+- Moving average options (20, 50, 100, 200-day)
+- Rolling window validation to test model stability
 
-1. Enter a stock ticker symbol
-2. Select date range for historical data
-3. Choose optimization metrics and tuning intensity
-4. Select features and parameters to tune
-5. Start model optimization
-6. View results, predictions, and performance metrics
+### Hybrid LSTM+XGBoost Model
+```
+streamlit run hybrid_stock_app.py
+```
 
-## Project Structure
+The Hybrid application features:
+- Separate controls for LSTM and XGBoost parameters
+- Technical indicator visualization
+- Feature importance analysis from XGBoost
+- Adjustable weighting between LSTM and XGBoost predictions
 
-### Core Files
+### CNN Model
+```
+streamlit run CNN_model.py
+```
 
-#### `lstm_app.py`
-The main application file that contains the Streamlit UI and orchestrates the workflow. It handles:
-- User interface and parameter selection
-- Data loading and preprocessing
-- Parameter tuning loop
-- Results visualization
-- Next-day price predictions
+The CNN application features:
+- Convolutional layer parameter adjustments
+- Specialized time-series visualization
+- Filter visualization options
 
-#### `lstm_model.py`
-The model implementation file that contains the `LSTMStockPredictor` class. It handles:
-- LSTM architecture definition
-- Data preprocessing
-- Model training and prediction
-- Performance evaluation
-- Visualization functions
+## Model Architectures
 
-## Model Architecture
-
-The LSTM model consists of:
-- Multiple LSTM layers with configurable sizes
-- Batch normalization layers for stable training
+### LSTM Architecture
+- Multiple stacked LSTM layers with configurable sizes
+- Batch normalization for training stability
 - Dropout layers to prevent overfitting
 - L2 regularization for better generalization
-- Dense output layer for price prediction
 
-The model addresses common challenges in financial time series:
-- High volatility and non-stationarity
-- Noise and random market fluctuations
-- Influence of global events and sentiment
-- Balancing short and long-term dependencies
+### Hybrid LSTM+XGBoost Architecture
+- LSTM neural network component for sequence learning
+- XGBoost gradient boosting for technical indicator analysis
+- Weighted combination of predictions from both models
+- Feature importance analysis for technical indicators
+
+### CNN Architecture
+- 1D convolutional layers for time-series pattern detection
+- Max pooling and flattening layers
+- Dense layers for final prediction
+
+## Recommended Usage
+
+1. **For Beginners**: Start with the LSTM model to understand basic time-series prediction
+2. **For Technical Analysis**: The Hybrid model provides the best integration of technical indicators
+3. **For Pattern Detection**: The CNN model can detect unique patterns in price movements
+
+## Common Parameters Explained
+
+- **Time Steps**: Number of previous days used to make a prediction (typically 30-120)
+- **LSTM Units**: Size of LSTM memory cell layers (higher = more complex patterns)
+- **Dropout Rate**: Controls overfitting by randomly deactivating neurons (0.0-0.5)
+- **Epochs**: Training iterations over the entire dataset
+- **Batch Size**: Number of samples processed before model update
 
 ## Performance Optimization
 
-The application provides several ways to optimize model performance:
+Each application provides ways to optimize model performance:
 - Parameter tuning to find optimal configurations
 - Multiple data transformation options
 - Feature selection
@@ -94,17 +127,10 @@ The application provides several ways to optimize model performance:
 
 ## Evaluation Metrics
 
-The model's performance is evaluated using:
+All models' performance is evaluated using:
 - **Mean Absolute Error (MAE)**: Average dollar error in predictions
 - **Root Mean Squared Error (RMSE)**: Emphasizes larger errors
-- **Mean Absolute Percentage Error (MAPE)**: Error as a percentage of actual price
 - **R² Score**: How well the model explains price variations
 - **Directional Accuracy**: How often the model correctly predicts price movement direction
 
-## License
 
-[Specify your license here]
-
-## Acknowledgments
-
-- [List any libraries, data sources, or inspirations] 
