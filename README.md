@@ -51,6 +51,8 @@ A comprehensive collection of machine learning models for stock price prediction
 
 ## Running the Applications
 
+### Go to GUI folder
+
 ### LSTM Model
 ```
 streamlit run lstm_app.py
